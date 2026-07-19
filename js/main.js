@@ -32,6 +32,19 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+/* Close mobile nav when tapping outside */
+document.addEventListener('click', (e) => {
+  if (navbar?.classList.contains('open') && !navbar.contains(e.target)) {
+    navbar.classList.remove('open');
+    const spans = toggle?.querySelectorAll('span');
+    if (spans) {
+      spans[0].style.transform = '';
+      spans[1].style.opacity   = '1';
+      spans[2].style.transform = '';
+    }
+  }
+});
+
 /* ── Active nav link ── */
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {

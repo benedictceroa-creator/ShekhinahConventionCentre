@@ -951,12 +951,20 @@ footer {
   .contact-grid   { grid-template-columns: 1fr; }
   .pricing-grid   { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .gallery-masonry { columns: 2; }
+  .two-col-img    { height: 300px; }
 }
 
 @media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body { overflow-x: hidden; }
+
   .section { padding: 3.5rem 0; }
+  .section-header { margin-bottom: 2rem; }
+
+  /* Nav */
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: flex; }
+  .nav-logo img { height: 46px !important; }
   .navbar.open .nav-links {
     display: flex;
     flex-direction: column;
@@ -966,13 +974,20 @@ footer {
     padding: 1.5rem;
     gap: 0.5rem;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 999;
   }
   .navbar.open .nav-cta {
     display: block;
     margin: 0.5rem 1.5rem 1.5rem;
   }
+
+  /* Hero — use svh on modern browsers so iOS address bar doesn't cut content */
+  .hero { min-height: 100vh; min-height: 100svh; }
+  .hero-content { padding: 6rem 0 3.5rem; }
   .hero-btns { flex-direction: column; align-items: flex-start; }
   .hero-stats { gap: 1.25rem; }
+
+  /* Grids */
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .audience-grid  { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
@@ -982,4 +997,42 @@ footer {
   .footer-bottom { flex-direction: column; text-align: center; }
   .gallery-masonry { columns: 1; }
   .distances-grid { grid-template-columns: 1fr; }
+
+  /* Images */
+  .two-col-img { height: 240px; }
+
+  /* Inner page hero */
+  .page-hero { padding: 7rem 0 3rem; }
+
+  /* Booking form */
+  .booking-form-wrap { padding: 1.5rem; }
+}
+
+/* ── EXTRA SMALL PHONES (≤480px) ── */
+@media (max-width: 480px) {
+  .section { padding: 2.5rem 0; }
+  .container { padding: 0 1rem; }
+
+  .nav-logo img { height: 40px !important; }
+
+  .hero-content { padding: 5.5rem 0 3rem; }
+  .hero-sub { font-size: 1rem; }
+
+  .two-col-img { height: 200px; }
+  .page-hero { padding: 6.5rem 0 2.5rem; }
+  .booking-form-wrap { padding: 1.25rem; }
+  .cta-banner { padding: 3rem 0; }
+
+  /* Stats strip — keep 2 cols but smaller numbers */
+  .stat-item-num { font-size: 1.7rem; }
+
+  /* Footer logo — cap width so it doesn't dominate */
+  footer .nav-logo img,
+  footer img { max-width: 180px; height: auto !important; }
+
+  .footer-grid { gap: 1.5rem; }
+
+  /* Form submit buttons stack */
+  .form-submit { flex-direction: column; }
+  .form-submit .btn { width: 100%; justify-content: center; }
 }
