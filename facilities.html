@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Facilities | Shekhinah Convention Centre</title>
+  <meta name="description" content="Athletics track, sports field, mini supermarket, prayer areas, generator backup and a 5-acre green campus — everything your group needs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .reveal { opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease; }
+    .reveal.revealed { opacity:1;transform:none; }
+    .fac-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
+    .fac-card { background:var(--white);border-radius:var(--radius-lg);padding:2rem 1.5rem;border:1px solid var(--border);box-shadow:var(--shadow);transition:all var(--transition);text-align:center; }
+    .fac-card:hover { transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold); }
+    .fac-icon { font-size:2.8rem;margin-bottom:1rem; }
+    .fac-card h4 { color:var(--teal-dark);margin-bottom:0.5rem; }
+    .fac-card p { font-size:0.88rem; }
+    @media(max-width:768px){.fac-grid{grid-template-columns:1fr;}}
+    @media(max-width:1024px){.fac-grid{grid-template-columns:1fr 1fr;}}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Logo/SHEKHINAH CONVENTION CENTRE LOGO-06.png" alt="Shekhinah Convention Centre" style="height:60px;width:auto;" />
+            </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="venues.html">Venues</a></li>
+        <li><a href="accommodation.html">Accommodation</a></li>
+        <li><a href="dining.html">Dining</a></li>
+        <li><a href="facilities.html" class="active">Facilities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html#enquiry" class="btn btn-primary nav-cta">Book a Campus Tour</a>
+      <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span>Facilities</span></nav>
+      <h1>Campus Facilities</h1>
+      <p>A complete 5-acre campus designed for everything your group needs — worship, recreation, rest and community.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="contact.html#enquiry" class="btn btn-primary">Book a Campus Tour</a>
+        <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPUS MAP / OVERVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="two-col-text">
+          <span class="section-label">The Campus</span>
+          <h2>Everything in One Place</h2>
+          <p style="margin:1rem 0;">The Shekhinah campus sits on 5 acres of land strategically located on National Highway 44, north of Hyderabad. It is thoughtfully designed so that all amenities are within easy walking distance of each other.</p>
+          <ul class="feature-list">
+            <li>Main Auditorium (615 seats)</li>
+            <li>A/C Mini Hall (80 seats)</li>
+            <li>Non-A/C Mini Hall (250 seats)</li>
+            <li>Open Hall (300 seats)</li>
+            <li>Girls' Accommodation Block</li>
+            <li>Boys' Accommodation Block</li>
+            <li>Dining Hall (350 seats)</li>
+            <li>Athletics Track &amp; Sports Field</li>
+            <li>Mini Supermarket</li>
+            <li>Generator Room</li>
+          </ul>
+        </div>
+        <div class="two-col-img" style="background:linear-gradient(135deg,#1d4a43,#2a6359);">
+          <span>🗺️</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES GRID -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">On-Campus Amenities</span>
+        <h2>Everything Your Group Needs</h2>
+      </div>
+      <div class="fac-grid reveal">
+        <div class="fac-card">
+          <div class="fac-icon">🏃</div>
+          <h4>Athletics Track</h4>
+          <p>A full athletics track for running, relays and warm-up activities — perfect for youth camps that need physical activity built into the programme.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">⚽</div>
+          <h4>Sports Field</h4>
+          <p>Spacious sports field for football, cricket, team-building games and outdoor activities. A huge hit with youth groups.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">🙏</div>
+          <h4>Prayer Areas</h4>
+          <p>Quiet, designated areas on campus for individual and group prayer — an essential part of the retreat experience.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">🛒</div>
+          <h4>Mini Supermarket</h4>
+          <p>A small supermarket on campus stocked with snacks, drinks and basic necessities so guests never have to leave the campus for essentials.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">⚡</div>
+          <h4>Generator Backup</h4>
+          <p>A powerful Kirloskar generator ensures 24/7 uninterrupted power — no disruptions to your event, ever, regardless of grid failures.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">🌿</div>
+          <h4>Green Open Spaces</h4>
+          <p>Beautiful greenery and open lawns ideal for informal fellowship, quiet time, outdoor games and creating that retreat atmosphere your group came for.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">🚗</div>
+          <h4>Ample Parking</h4>
+          <p>Generous parking space for buses, vans and cars — no stress about parking when your group arrives by their own transport.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">🔒</div>
+          <h4>Safe, Gated Campus</h4>
+          <p>A secure, gated campus with proper supervision — giving parents and leaders peace of mind, especially for youth groups and school events.</p>
+        </div>
+        <div class="fac-card">
+          <div class="fac-icon">📍</div>
+          <h4>Strategic Location</h4>
+          <p>On National Highway 44, just 1 hour from central Hyderabad. Easy access by road, and close to Wadiaram railway station (5 km).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR YOUTH CAMPS -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="two-col-img" style="background:linear-gradient(135deg,#1a4535,#2d7055);">⚽</div>
+        <div class="two-col-text">
+          <span class="section-label">For Youth Camps</span>
+          <h2>Sports, Space and Energy</h2>
+          <p style="margin:1rem 0;">Youth groups love Shekhinah — not just for the sessions in the auditorium, but for everything outside too. A full athletics track, sports field and open green spaces give young people room to run, compete and build friendships.</p>
+          <ul class="feature-list">
+            <li>Full athletics running track</li>
+            <li>Sports field for football, cricket and more</li>
+            <li>Open grounds for games and activities</li>
+            <li>Open Hall ideal for evening sessions and worship nights</li>
+            <li>Dormitory accommodation for large youth groups</li>
+            <li>On-campus supermarket for snacks and drinks</li>
+          </ul>
+          <a href="contact.html#enquiry" class="btn btn-primary">Plan a Youth Camp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div class="container">
+      <h2>See the Campus for Yourself</h2>
+      <p>Nothing beats a campus tour. Come see why Shekhinah is the preferred venue for churches across Telangana.</p>
+      <div class="cta-banner-btns">
+        <a href="contact.html#enquiry" class="btn btn-primary">Book a Campus Tour</a>
+        <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><img src="Logo/SHEKHINAH CONVENTION CENTRE LOGO-06.png" alt="Shekhinah Convention Centre" style="height:80px;width:auto;margin-bottom:0.75rem;" /><div class="footer-brand-sub">John Foundation Campus</div><p class="footer-desc">Hyderabad's premier Christian retreat and convention centre.</p></div>
+        <div class="footer-col"><h5>Quick Links</h5><ul>
+          <li><a href="index.html">Home</a></li><li><a href="venues.html">Venues</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li><li><a href="dining.html">Dining</a></li>
+          <li><a href="facilities.html">Facilities</a></li><li><a href="gallery.html">Gallery</a></li>
+          <li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Facilities</h5><ul>
+          <li><a href="#">Athletics Track</a></li><li><a href="#">Sports Field</a></li>
+          <li><a href="#">Prayer Areas</a></li><li><a href="#">Mini Supermarket</a></li>
+          <li><a href="#">Generator Backup</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Contact</h5>
+          <div class="footer-contact-item"><span class="icon">📞</span><div><a href="tel:+917093857222">+91 70938 57222</a></div></div>
+          <div class="footer-contact-item"><span class="icon">✉️</span><div><a href="mailto:linu.m@johnfoundation.org">linu.m@johnfoundation.org</a></div></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><div>&copy; 2025 Shekhinah Convention Centre · John Foundation.</div></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917093857222" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="whatsapp-tooltip">Chat with us</span>💬
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>
