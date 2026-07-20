@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benedictceroa-creator.github.io/ShekhinahConventionCentre/sitemap.xml
