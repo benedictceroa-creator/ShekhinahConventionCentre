@@ -201,6 +201,7 @@ p  { color: var(--text-mid); }
   background: rgba(201,169,110,0.1);
 }
 .nav-cta { margin-left: 1rem; }
+.nav-cta-mobile { display: none; }
 .nav-toggle {
   display: none;
   flex-direction: column;
