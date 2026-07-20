@@ -18,8 +18,9 @@
     .dining-icon { font-size:2.5rem;margin-bottom:1rem; }
     .dining-card h4 { color:var(--teal-dark);margin-bottom:0.5rem; }
     .dining-card p { font-size:0.88rem; }
-    @media(max-width:768px){.dining-highlights{grid-template-columns:1fr;}}
+    .sample-menu { display:grid;grid-template-columns:1fr 1fr;gap:1.5rem; }
     @media(max-width:1024px){.dining-highlights{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.dining-highlights{grid-template-columns:1fr;}.sample-menu{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -147,7 +148,7 @@
         <h2>A Taste of What We Serve</h2>
         <p style="max-width:480px;margin:0.75rem auto 0;">Menus are fully customisable — these are examples of what a typical retreat menu might look like.</p>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
+      <div class="sample-menu reveal">
         <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);">
           <h4 style="color:var(--gold);margin-bottom:1rem;">☀️ Breakfast</h4>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
