@@ -55,6 +55,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 /* ── Enquiry form submission ── */
+emailjs.init('ZMOqGe0V4vSDL1ux8');
+
 const enquiryForm = document.getElementById('enquiry-form');
 enquiryForm?.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -65,20 +67,43 @@ enquiryForm?.addEventListener('submit', (e) => {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  /* Simulate submission (replace with real endpoint or EmailJS) */
-  setTimeout(() => {
-    btn.textContent = 'Request Sent ✓';
-    if (msg) {
-      msg.style.display = 'block';
-      msg.textContent = `Thank you, ${name}! We'll get back to you within 24 hours with a customized quote.`;
-    }
-    enquiryForm.reset();
-    setTimeout(() => {
+  const templateParams = {
+    name:          enquiryForm.querySelector('[name="name"]')?.value,
+    org:           enquiryForm.querySelector('[name="org"]')?.value,
+    phone:         enquiryForm.querySelector('[name="phone"]')?.value,
+    email:         enquiryForm.querySelector('[name="email"]')?.value,
+    event_type:    enquiryForm.querySelector('[name="event-type"]')?.value,
+    attendees:     enquiryForm.querySelector('[name="attendees"]')?.value,
+    dates:         enquiryForm.querySelector('[name="dates"]')?.value,
+    duration:      enquiryForm.querySelector('[name="duration"]')?.value,
+    accommodation: enquiryForm.querySelector('[name="accommodation"]')?.value,
+    meals:         enquiryForm.querySelector('[name="meals"]')?.value,
+    message:       enquiryForm.querySelector('[name="message"]')?.value,
+  };
+
+  emailjs.send('service_2qqps7p', 'template_gqglr1s', templateParams)
+    .then(() => {
+      btn.textContent = 'Request Sent ✓';
+      if (msg) {
+        msg.style.display = 'block';
+        msg.textContent = `Thank you, ${name}! We'll get back to you within 24 hours with a customised quote.`;
+      }
+      enquiryForm.reset();
+      setTimeout(() => {
+        btn.textContent = 'Request a Quote';
+        btn.disabled = false;
+        if (msg) msg.style.display = 'none';
+      }, 5000);
+    })
+    .catch(() => {
       btn.textContent = 'Request a Quote';
       btn.disabled = false;
-      if (msg) msg.style.display = 'none';
-    }, 5000);
-  }, 1000);
+      if (msg) {
+        msg.style.display = 'block';
+        msg.style.color = '#c0392b';
+        msg.textContent = 'Something went wrong. Please call or WhatsApp us directly on +91 70938 57222.';
+      }
+    });
 });
 
 /* ── Counter animation ── */
