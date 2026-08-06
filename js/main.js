@@ -55,7 +55,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 /* ── Enquiry form submission ── */
-emailjs.init('ZMOqGe0V4vSDL1ux8');
+if (typeof emailjs !== 'undefined') emailjs.init('ZMOqGe0V4vSDL1ux8');
 
 const enquiryForm = document.getElementById('enquiry-form');
 enquiryForm?.addEventListener('submit', (e) => {
