@@ -67,7 +67,19 @@
     .dining-card p { font-size:0.88rem; }
     .sample-menu { display:grid;grid-template-columns:1fr 1fr;gap:1.5rem; }
     @media(max-width:1024px){.dining-highlights{grid-template-columns:1fr 1fr;}}
-    @media(max-width:768px){.dining-highlights{grid-template-columns:1fr;}.sample-menu{grid-template-columns:1fr;}}
+    @media(max-width:768px){.dining-highlights{grid-template-columns:1fr;}.sample-menu{grid-template-columns:1fr;}.dining-hall-grid{grid-template-columns:1fr!important;}}
+    .dining-carousel{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);height:420px;max-width:900px;margin:0 auto;user-select:none;}
+    .carousel-track{display:flex;height:100%;transition:transform 0.5s ease;}
+    .carousel-slide{min-width:100%;height:100%;}
+    .carousel-slide img{width:100%;height:100%;object-fit:cover;}
+    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:2;}
+    .carousel-btn:hover{background:rgba(0,0,0,0.7);}
+    .carousel-prev{left:12px;}
+    .carousel-next{right:12px;}
+    .carousel-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2;}
+    .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.5);border:none;cursor:pointer;padding:0;transition:background 0.2s;}
+    .carousel-dot.active{background:#fff;}
+    @media(max-width:768px){.dining-carousel{height:260px;}}
   </style>
 </head>
 <body>
@@ -109,7 +121,7 @@
     <div class="container">
       <div class="two-col">
         <div class="two-col-img" style="background:var(--teal);padding:0;">
-          <picture><source srcset="Images/Dining - Cook.webp" type="image/webp"><img src="Images/Dining - Cook.jpg" alt="Shekhinah kitchen team preparing meals" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;" /></picture>
+          <img src="Images/CooksD.JPG" alt="Shekhinah kitchen team preparing meals" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
         </div>
         <div class="two-col-text">
           <span class="section-label">Dining Overview</span>
@@ -181,8 +193,21 @@
         <h2>Seating for 350 Guests</h2>
         <p style="max-width:520px;margin:0.75rem auto 0;">A large, well-lit dining hall with stainless steel tables and benches — clean, practical and built for groups of every size.</p>
       </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);height:420px;">
-        <picture><source srcset="Images/Dining benches.webp" type="image/webp"><img src="Images/Dining benches.jpg" alt="Shekhinah Convention Centre dining hall" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center;" /></picture>
+      <div class="dining-carousel" id="diningCarousel">
+        <div class="carousel-track" id="diningTrack">
+          <div class="carousel-slide"><img src="Images/Dine1.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="Images/Dine2.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="Images/Dine3.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="Images/Serving.JPG" alt="Meal serving at Shekhinah Convention Centre" loading="lazy" /></div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="diningPrev" aria-label="Previous">&#8249;</button>
+        <button class="carousel-btn carousel-next" id="diningNext" aria-label="Next">&#8250;</button>
+        <div class="carousel-dots" id="diningDots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -277,5 +302,27 @@
     <span class="whatsapp-tooltip">Chat with us</span>💬
   </a>
   <script src="js/main.js"></script>
+  <script>
+    (function(){
+      var track = document.getElementById('diningTrack');
+      var dots = document.querySelectorAll('#diningDots .carousel-dot');
+      var current = 0;
+      var total = 4;
+      var timer;
+
+      function goTo(idx) {
+        current = (idx + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+      }
+
+      document.getElementById('diningPrev').addEventListener('click', function(){ goTo(current - 1); resetTimer(); });
+      document.getElementById('diningNext').addEventListener('click', function(){ goTo(current + 1); resetTimer(); });
+      dots.forEach(function(d, i){ d.addEventListener('click', function(){ goTo(i); resetTimer(); }); });
+
+      function resetTimer(){ clearInterval(timer); timer = setInterval(function(){ goTo(current + 1); }, 4500); }
+      resetTimer();
+    })();
+  </script>
 </body>
 </html>
