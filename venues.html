@@ -112,7 +112,8 @@
     .uses-section h5 { font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-mid);margin-bottom:0.6rem; }
     .uses-tags { display:flex;flex-wrap:wrap;gap:0.5rem; }
     .use-tag { background:rgba(29,74,67,0.08);color:var(--teal);border:1px solid rgba(29,74,67,0.2);border-radius:50px;padding:0.3rem 0.85rem;font-size:0.8rem;font-weight:600; }
-    @media(max-width:768px){.venue-full{grid-template-columns:1fr;}.spec-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){.venue-full{grid-template-columns:1fr;padding:2.5rem 0;}.venue-full-img{height:240px;}.spec-grid{grid-template-columns:1fr;}}
+    @media(max-width:480px){.venue-full-img{height:200px;}}
   </style>
 </head>
 <body>
@@ -156,7 +157,7 @@
         <span class="section-label">Quick Overview</span>
         <h2>Choose the Right Space</h2>
       </div>
-      <div class="stats-grid reveal" style="background:var(--white);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow);margin-bottom:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center;">
+      <div class="stats-grid reveal" style="background:var(--white);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow);margin-bottom:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1.5rem;text-align:center;">
         <div><div style="font-size:2rem;margin-bottom:0.5rem;">🏛️</div><div style="font-family:var(--font-head);font-size:1.5rem;color:var(--teal-dark);font-weight:700;">615</div><div style="font-size:0.85rem;color:var(--text-mid);font-weight:600;">Main Auditorium</div></div>
         <div><div style="font-size:2rem;margin-bottom:0.5rem;">🎙️</div><div style="font-family:var(--font-head);font-size:1.5rem;color:var(--teal-dark);font-weight:700;">80</div><div style="font-size:0.85rem;color:var(--text-mid);font-weight:600;">A/C Mini Hall</div></div>
         <div><div style="font-size:2rem;margin-bottom:0.5rem;">🎭</div><div style="font-family:var(--font-head);font-size:1.5rem;color:var(--teal-dark);font-weight:700;">250</div><div style="font-size:0.85rem;color:var(--text-mid);font-weight:600;">Non A/C Hall</div></div>
