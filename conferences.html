@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastors Conference Venue Hyderabad | Shekhinah Convention Centre</title>
+  <meta name="description" content="Organising a pastors or ministers conference near Hyderabad? Shekhinah's 615-seat A/C auditorium with professional AV, on-site accommodation and full catering is Telangana's premier choice. WhatsApp us for a quote." />
+  <meta name="keywords" content="pastors conference venue Hyderabad, ministers conference Telangana, Christian conference centre Hyderabad, Christian auditorium Hyderabad, Bible college retreat centre Hyderabad, church conference venue Telangana" />
+  <link rel="canonical" href="https://www.shekhinahconventioncentre.com/conferences.html" />
+  <meta name="theme-color" content="#1d4a43" />
+  <meta property="og:title" content="Pastors Conference Venue Hyderabad | Shekhinah Convention Centre" />
+  <meta property="og:description" content="615-seat A/C auditorium, professional AV, on-site accommodation and full catering — Telangana's premier Christian conference venue." />
+  <meta property="og:image" content="https://www.shekhinahconventioncentre.com/Images/Main-Auditorium.jpg" />
+  <meta property="og:url" content="https://www.shekhinahconventioncentre.com/conferences.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .lp-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(20,46,41,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,169,110,0.2);
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .lp-header.scrolled { background: var(--teal-dark); box-shadow: 0 2px 20px rgba(0,0,0,0.25); }
+    .lp-header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .lp-header-right { display: flex; align-items: center; gap: 0.75rem; }
+    .lp-phone { color: rgba(255,255,255,0.8); font-size: 0.88rem; font-weight: 600; }
+    .lp-phone a { color: var(--gold); }
+
+    .sticky-bar {
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      z-index: 999;
+      background: var(--gold);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .sticky-bar.visible { transform: none; }
+    .sticky-bar-text { font-size: 0.88rem; font-weight: 700; color: var(--teal-dark); }
+    .sticky-bar-btns { display: flex; gap: 0.5rem; flex-shrink: 0; }
+    .sticky-bar-btns .btn { font-size: 0.8rem; padding: 0.4rem 1rem; }
+
+    /* Static image hero for conferences */
+    .hero-image-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Images/Main-Auditorium.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .hero-content { padding: 8rem 0 5.5rem; }
+
+    .lp-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .lp-feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .lp-feature-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .lp-feature-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .lp-feature-card h4 { color: var(--teal-dark); margin-bottom: 0.4rem; }
+    .lp-feature-card p { font-size: 0.88rem; }
+
+    .testimonials-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .testimonial-single {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .testimonial-single::before {
+      content: '"';
+      font-family: var(--font-head);
+      font-size: 4.5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: 0.4rem; left: 1.25rem;
+      line-height: 1;
+    }
+
+    .lp-footer {
+      background: var(--teal-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 2rem 0;
+      font-size: 0.88rem;
+    }
+    .lp-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .lp-footer a { color: var(--gold); }
+    .lp-footer-contact { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+    .reveal-d5 { transition-delay: 0.5s; }
+
+    @media (max-width: 1024px) { .lp-features-grid { grid-template-columns: repeat(2, 1fr); } .testimonials-two { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      .lp-features-grid { grid-template-columns: 1fr; }
+      .lp-phone { display: none; }
+      .sticky-bar { padding: 0.5rem 1rem; }
+      .sticky-bar-text { font-size: 0.8rem; }
+      .lp-footer-inner { flex-direction: column; align-items: flex-start; }
+      .lp-footer-contact { flex-direction: column; gap: 0.5rem; }
+    }
+    @media (max-width: 480px) {
+      .sticky-bar-text { display: none; }
+      .sticky-bar-btns { width: 100%; }
+      .sticky-bar-btns .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8042290GN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8042290GN');
+    gtag('config', 'AW-18405705430');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y3n43tnp6b");
+  </script>
+</head>
+<body>
+
+  <!-- ── MINIMAL HEADER ── -->
+  <header class="lp-header" id="lp-header">
+    <div class="container lp-header-inner">
+      <a href="index.html">
+        <img src="Logo/SHEKHINAH CONVENTION CENTRE LOGO-06.png" alt="Shekhinah Convention Centre" style="height:56px;width:auto;" />
+      </a>
+      <div class="lp-header-right">
+        <p class="lp-phone">Call us: <a href="tel:+917093857222">+91 70938 57222</a></p>
+        <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:0.82rem;padding:0.55rem 1.1rem;">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── STICKY BAR ── -->
+  <div class="sticky-bar" id="sticky-bar">
+    <span class="sticky-bar-text">Organising a pastors or ministers conference near Hyderabad?</span>
+    <div class="sticky-bar-btns">
+      <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Now</a>
+      <a href="tel:+917093857222" class="btn btn-outline-dark">📞 Call</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-image-bg"></div>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-tag">✝️ Pastors & Ministers Conference Venue · Hyderabad</div>
+      <h1>Hyderabad's Premier Venue for <span>Pastors & Ministers Conferences</span></h1>
+      <p class="hero-sub" style="margin:1rem 0 2rem;">615-seat A/C auditorium with professional AV · On-site accommodation for delegates · In-house catering · Private, focused campus · 1 hour from Hyderabad on NH-44.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:1rem;padding:0.9rem 2rem;">💬 WhatsApp for a Quote</a>
+        <a href="tel:+917093857222" class="btn btn-outline">📞 +91 70938 57222</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">615</div><div class="hero-stat-label">Seat A/C Auditorium</div></div>
+        <div><div class="hero-stat-num">350+</div><div class="hero-stat-label">Delegates Accommodated</div></div>
+        <div><div class="hero-stat-num">5</div><div class="hero-stat-label">Venues On Campus</div></div>
+        <div><div class="hero-stat-num">1 hr</div><div class="hero-stat-label">From Hyderabad</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS STRIP ── -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-item-num">615</div><div class="stat-item-label">Seat A/C Auditorium</div></div>
+        <div class="stat-item"><div class="stat-item-num">Pro AV</div><div class="stat-item-label">Sound, Lighting & Projection</div></div>
+        <div class="stat-item"><div class="stat-item-num">24/7</div><div class="stat-item-label">Generator Backup</div></div>
+        <div class="stat-item"><div class="stat-item-num">NH-44</div><div class="stat-item-label">Easy Road Access</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY SHEKHINAH FOR CONFERENCES ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Why Ministers Choose Shekhinah</span>
+        <h2>A Conference Venue That Honours the Occasion</h2>
+        <p style="max-width:580px;margin:0.75rem auto 0;">When pastors and ministers gather, the environment matters. Shekhinah provides a venue that is professional, focused and purpose-built for Christian ministry.</p>
+      </div>
+      <div class="lp-features-grid">
+        <div class="lp-feature-card reveal">
+          <div class="lp-feature-icon">🏛️</div>
+          <h4>615-Seat A/C Auditorium</h4>
+          <p>Theatre-style push-back reclining chairs, full air-conditioning, balcony seating and a commanding professional stage. A space worthy of the leaders you are gathering.</p>
+        </div>
+        <div class="lp-feature-card reveal reveal-d1">
+          <div class="lp-feature-icon">🎵</div>
+          <h4>Professional A/V System</h4>
+          <p>State-of-the-art sound, professional stage lighting and large projection screens in all halls — no need to source or rent equipment externally.</p>
+        </div>
+        <div class="lp-feature-card reveal reveal-d2">
+          <div class="lp-feature-icon">🛏️</div>
+          <h4>Accommodation for Delegates</h4>
+          <p>Speakers and delegates can stay right on campus in executive rooms and quality accommodation — simplifying logistics and deepening fellowship between sessions.</p>
+        </div>
+        <div class="lp-feature-card reveal reveal-d3">
+          <div class="lp-feature-icon">🍽️</div>
+          <h4>Full Catering & Dining</h4>
+          <p>Our kitchen team handles all meals, tea breaks and special conference dinners for up to 350 delegates — all managed on-site with no need for external caterers.</p>
+        </div>
+        <div class="lp-feature-card reveal reveal-d4">
+          <div class="lp-feature-icon">🌿</div>
+          <h4>Private, Focused Campus</h4>
+          <p>Away from the noise of the city, the 5-acre gated campus creates an environment of focus and purpose. The setting itself sets the tone for serious ministry.</p>
+        </div>
+        <div class="lp-feature-card reveal reveal-d5">
+          <div class="lp-feature-icon">📅</div>
+          <h4>Flexible for Multi-Day Events</h4>
+          <p>Whether it is a 1-day pastors seminar or a 5-day ministers' convention, our team manages the full setup — venue, accommodation, meals and AV — from beginning to end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUDITORIUM 2-COL ── -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="two-col">
+        <div class="two-col-img" style="padding:0;">
+          <picture>
+            <source srcset="Images/Main-Auditorium.webp" type="image/webp">
+            <img src="Images/Main-Auditorium.jpg" alt="Shekhinah 615-seat auditorium for pastors conferences near Hyderabad" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </picture>
+        </div>
+        <div class="two-col-text">
+          <span class="section-label">The Main Auditorium</span>
+          <h2>A Stage That Commands Attention</h2>
+          <p>The Shekhinah Main Auditorium is built for moments that matter — keynote addresses, commissioning services, worship and plenary sessions that need to be felt, not just heard.</p>
+          <ul class="feature-list">
+            <li>615 push-back reclining theatre seats</li>
+            <li>Full air-conditioning throughout</li>
+            <li>Balcony seating for overflow</li>
+            <li>Professional stage with lighting rig</li>
+            <li>High-quality sound system and mixing desk</li>
+            <li>Large projection screens front and back</li>
+            <li>Generator backup — no power disruptions</li>
+          </ul>
+          <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 Check Availability</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">What Leaders Say</span>
+        <h2>Trusted by Pastors &amp; Leaders Across South India</h2>
+      </div>
+      <div class="testimonials-two reveal">
+        <div class="testimonial-single">
+          <p class="testimonial-text" style="font-size:0.95rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem;padding-top:1rem;">"The auditorium blew us away — the sound quality was exceptional and our congregation of 500 was completely comfortable. The food was excellent and the staff were incredibly helpful throughout. We've already booked again for next year."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍💼</div>
+            <div>
+              <div class="author-name">Pastor Samuel R.</div>
+              <div class="author-role">Annual Church Conference, Hyderabad</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-single">
+          <p class="testimonial-text" style="font-size:0.95rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem;padding-top:1rem;">"As a Bible college, we needed a focused, distraction-free environment. Shekhinah provided exactly that, plus great food and comfortable rooms for our students and faculty. Outstanding from start to finish."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">📖</div>
+            <div>
+              <div class="author-name">Dr. Thomas K.</div>
+              <div class="author-role">Bible College Principal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENQUIRY ── -->
+  <section class="section section-dark" id="enquiry">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="section-label">Get a Quote</span>
+          <h2 style="color:#fff;">Tell Us About Your Conference</h2>
+          <p style="margin:1rem 0 2rem;">WhatsApp us and we'll reply within the hour with availability, capacity details and a customised quote for your pastors or ministers conference.</p>
+          <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:1.05rem;padding:1rem 2.2rem;display:inline-flex;">💬 WhatsApp Us Now</a>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-top:2rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <div style="width:42px;height:42px;background:rgba(201,169,110,0.15);border:1px solid rgba(201,169,110,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📞</div>
+              <div>
+                <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em;">Call directly</div>
+                <a href="tel:+917093857222" style="color:var(--gold);font-weight:700;font-size:1.05rem;">+91 70938 57222</a>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <div style="width:42px;height:42px;background:rgba(201,169,110,0.15);border:1px solid rgba(201,169,110,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">✉️</div>
+              <div>
+                <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em;">Email</div>
+                <a href="mailto:shekhinahcc@ashajyothi.org.in" style="color:var(--gold);font-weight:700;font-size:0.9rem;">shekhinahcc@ashajyothi.org.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="booking-form-wrap">
+          <h3>Or Send an Enquiry</h3>
+          <p class="sub">A few details and we'll respond within 24 hours with a customised quote.</p>
+          <form id="enquiry-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Pastor / Organiser Name" required />
+              </div>
+              <div class="form-group">
+                <label for="org">Organisation / Church *</label>
+                <input type="text" id="org" name="org" placeholder="Denomination / Ministry name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+              <div class="form-group">
+                <label for="attendees">No. of Delegates *</label>
+                <select id="attendees" name="attendees" required>
+                  <option value="">Select range…</option>
+                  <option>Up to 50</option>
+                  <option>50 – 100</option>
+                  <option>100 – 250</option>
+                  <option>250 – 400</option>
+                  <option>400 – 615</option>
+                  <option>615+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dates">Approximate Dates</label>
+                <input type="text" id="dates" name="dates" placeholder="e.g. 10–12 September 2025" />
+              </div>
+              <div class="form-group">
+                <label for="duration">Duration</label>
+                <select id="duration" name="duration">
+                  <option value="">Select…</option>
+                  <option>Full-day</option>
+                  <option>2 days / 1 night</option>
+                  <option>3 days / 2 nights</option>
+                  <option>4+ days</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-submit" style="margin-top:1.25rem;">
+              <button type="submit" class="btn btn-primary">Send Enquiry</button>
+            </div>
+            <p class="form-note">We'll respond within 24 hours. WhatsApp us for an instant reply.</p>
+            <div class="success-msg" id="form-success"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MINIMAL FOOTER ── -->
+  <footer class="lp-footer">
+    <div class="container lp-footer-inner">
+      <div>
+        <img src="Logo/SHEKHINAH CONVENTION CENTRE LOGO-06.png" alt="Shekhinah Convention Centre" style="height:44px;width:auto;margin-bottom:0.4rem;" />
+        <div style="font-size:0.8rem;">John Foundation, Ramanthapur Campus, NH-44, Telangana</div>
+      </div>
+      <div class="lp-footer-contact">
+        <div><a href="tel:+917093857222">📞 +91 70938 57222</a></div>
+        <div><a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad." target="_blank" rel="noopener">💬 WhatsApp</a></div>
+        <div><a href="mailto:shekhinahcc@ashajyothi.org.in">✉️ shekhinahcc@ashajyothi.org.in</a></div>
+      </div>
+      <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);">
+        &copy; 2025 Shekhinah Convention Centre &middot; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.4);">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── WHATSAPP FLOAT ── -->
+  <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+pastors+conference+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-tooltip">Chat with us</span>💬
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    const lpHeader  = document.getElementById('lp-header');
+    const stickyBar = document.getElementById('sticky-bar');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      lpHeader?.classList.toggle('scrolled', y > 60);
+      stickyBar?.classList.toggle('visible', y > 420);
+    });
+
+    if (typeof emailjs !== 'undefined') emailjs.init('ZMOqGe0V4vSDL1ux8');
+
+    const form = document.getElementById('enquiry-form');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn  = form.querySelector('[type="submit"]');
+      const msg  = document.getElementById('form-success');
+      const name = form.querySelector('[name="name"]')?.value || 'there';
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      emailjs.send('service_2qqps7p', 'template_gqglr1s', {
+        name:          form.querySelector('[name="name"]')?.value,
+        org:           form.querySelector('[name="org"]')?.value,
+        phone:         form.querySelector('[name="phone"]')?.value,
+        email:         '',
+        event_type:    'Conference / Seminar',
+        attendees:     form.querySelector('[name="attendees"]')?.value,
+        dates:         form.querySelector('[name="dates"]')?.value,
+        duration:      form.querySelector('[name="duration"]')?.value,
+        accommodation: 'Not specified',
+        meals:         'Not specified',
+        message:       'Enquiry from pastors conference landing page',
+      }).then(() => {
+        btn.textContent = 'Sent ✓';
+        if (msg) { msg.style.display = 'block'; msg.textContent = `Thank you, ${name}! We'll get back to you within 24 hours.`; }
+        form.reset();
+        setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.disabled = false; if (msg) msg.style.display = 'none'; }, 5000);
+      }).catch(() => {
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+        if (msg) { msg.style.display = 'block'; msg.style.color = '#c0392b'; msg.textContent = 'Something went wrong. Please WhatsApp us on +91 70938 57222.'; }
+      });
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => ro.observe(el));
+    }
+  </script>
+</body>
+</html>
