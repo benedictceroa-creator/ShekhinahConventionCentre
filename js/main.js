@@ -83,6 +83,7 @@ enquiryForm?.addEventListener('submit', (e) => {
 
   emailjs.send('service_2qqps7p', 'template_gqglr1s', templateParams)
     .then(() => {
+      trackEvent('enquiry_form_submit', { event_category: 'lead' });
       btn.textContent = 'Request Sent ✓';
       if (msg) {
         msg.style.display = 'block';
@@ -105,6 +106,44 @@ enquiryForm?.addEventListener('submit', (e) => {
       }
     });
 });
+
+/* ── GA4 Lead Event Tracking ── */
+const trackEvent = (name, params = {}) => {
+  if (typeof gtag === 'function') gtag('event', name, params);
+};
+
+document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+  el.addEventListener('click', () => trackEvent('whatsapp_click', { event_category: 'lead' }));
+});
+
+document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+  el.addEventListener('click', () => trackEvent('phone_click', { event_category: 'lead' }));
+});
+
+document.querySelectorAll('.nav-cta, .nav-cta-mobile a').forEach(el => {
+  el.addEventListener('click', () => trackEvent('cta_click', { event_category: 'lead', event_label: 'book_tour_nav' }));
+});
+
+/* ── Sticky CTA bar ── */
+const stickyCta  = document.getElementById('sticky-cta');
+const heroSection = document.querySelector('.hero');
+const enquirySection = document.getElementById('enquiry');
+const whatsappFloat  = document.querySelector('.whatsapp-float');
+
+if (stickyCta) {
+  const updateSticky = () => {
+    const heroPast = heroSection ? heroSection.getBoundingClientRect().bottom < 0 : window.scrollY > 600;
+    const enquiryRect = enquirySection ? enquirySection.getBoundingClientRect() : null;
+    const enquiryVisible = enquiryRect && enquiryRect.top < window.innerHeight && enquiryRect.bottom > 0;
+    const show = heroPast && !enquiryVisible;
+
+    stickyCta.classList.toggle('visible', show);
+    if (whatsappFloat) {
+      whatsappFloat.style.bottom = show ? `calc(${stickyCta.offsetHeight}px + 0.85rem)` : '';
+    }
+  };
+  window.addEventListener('scroll', updateSticky, { passive: true });
+}
 
 /* ── Counter animation ── */
 function animateCount(el) {
