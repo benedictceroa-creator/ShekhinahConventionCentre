@@ -84,6 +84,7 @@ enquiryForm?.addEventListener('submit', (e) => {
   emailjs.send('service_2qqps7p', 'template_gqglr1s', templateParams)
     .then(() => {
       trackEvent('enquiry_form_submit', { event_category: 'lead' });
+      trackEvent('generate_lead', { event_category: 'lead', value: 1 });
       btn.textContent = 'Request Sent ✓';
       if (msg) {
         msg.style.display = 'block';

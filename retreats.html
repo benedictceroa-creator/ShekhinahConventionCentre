@@ -183,7 +183,8 @@
     <div class="container hero-content">
       <div class="hero-tag">✝️ Church Retreat Venue · Near Hyderabad</div>
       <h1>The Church Retreat Venue Your <span>Congregation Deserves</span></h1>
-      <p class="hero-sub" style="margin:1rem 0 2rem;">615-seat A/C auditorium · Accommodation for 350 · In-house dining · 5-acre gated campus · 1 hour from Hyderabad on NH-44.</p>
+      <p class="hero-sub" style="margin:1rem 0 1rem;">615-seat A/C auditorium · Accommodation for 350 · In-house dining · 5-acre gated campus · 1 hour from Hyderabad on NH-44.</p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.85);margin-bottom:2rem;font-weight:500;">⚡ Weekend dates for Oct–Dec 2026 are filling fast — WhatsApp us to check availability.</p>
       <div class="hero-btns">
         <a href="https://wa.me/917093857222?text=Hi%2C+I%27m+looking+for+a+church+retreat+venue+near+Hyderabad.+Can+you+share+details+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:1rem;padding:0.9rem 2rem;">💬 WhatsApp for a Quote</a>
         <a href="tel:+917093857222" class="btn btn-outline">📞 +91 70938 57222</a>
@@ -280,20 +281,32 @@
     </div>
   </section>
 
-  <!-- ── TESTIMONIAL ── -->
+  <!-- ── TESTIMONIALS ── -->
   <section class="section">
-    <div class="container text-center">
+    <div class="container">
       <div class="section-header text-center">
         <span class="section-label">What Pastors Say</span>
         <h2>Trusted by Churches Across Telangana</h2>
       </div>
-      <div class="testimonial-single reveal">
-        <p class="testimonial-text" style="font-size:1.05rem;font-style:italic;color:var(--text-mid);margin-bottom:1.5rem;padding-top:1rem;">"The auditorium blew us away — the sound quality was exceptional and our congregation of 500 was completely comfortable. The food was excellent and the staff were incredibly helpful throughout. We've already booked again for next year."</p>
-        <div class="testimonial-author" style="justify-content:center;">
-          <div class="author-avatar">👨‍💼</div>
-          <div>
-            <div class="author-name">Pastor Samuel R.</div>
-            <div class="author-role">Annual Church Conference, Hyderabad</div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The auditorium blew us away — the sound quality was exceptional and our congregation of 500 was completely comfortable. The food was excellent and the staff were incredibly helpful throughout. We've already booked again for next year."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍💼</div>
+            <div>
+              <div class="author-name">Pastor Samuel R.</div>
+              <div class="author-role">Annual Church Conference, Hyderabad</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"On behalf of the Youth Outreach Ministry, I would like to thank SCC for providing us with a beautiful campus to conduct our youth camp. Wonderful facilities, spacious rooms and the hall was so sufficient. The staff came an extra mile to help us — brother Linu's support was exceptional. Food was excellent and served limitless. God bless you all."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩‍💼</div>
+            <div>
+              <div class="author-name">Camp Coordinator</div>
+              <div class="author-role">Youth Outreach Ministry, 2-Day Youth Camp</div>
+            </div>
           </div>
         </div>
       </div>
@@ -412,7 +425,7 @@
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       lpHeader?.classList.toggle('scrolled', y > 60);
-      stickyBar?.classList.toggle('visible', y > 420);
+      stickyBar?.classList.toggle('visible', y > 200);
     });
 
     if (typeof emailjs !== 'undefined') emailjs.init('ZMOqGe0V4vSDL1ux8');
@@ -438,6 +451,10 @@
         meals:         'Not specified',
         message:       'Enquiry from church retreat landing page',
       }).then(() => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_category: 'lead', value: 1 });
+          gtag('event', 'enquiry_form_submit', { event_category: 'lead' });
+        }
         btn.textContent = 'Sent ✓';
         if (msg) { msg.style.display = 'block'; msg.textContent = `Thank you, ${name}! We'll get back to you within 24 hours.`; }
         form.reset();
