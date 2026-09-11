@@ -138,7 +138,10 @@
     <div class="container">
       <div class="two-col">
         <div class="two-col-img" style="background:var(--teal);padding:0;">
-          <img src="Images/Dine3.JPG" alt="Shekhinah dining hall" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+          <picture>
+            <source srcset="Images/Dine3.webp" type="image/webp">
+            <img src="Images/Dine3.JPG" alt="Shekhinah dining hall" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+          </picture>
         </div>
         <div class="two-col-text">
           <span class="section-label">Dining Overview</span>
@@ -212,10 +215,10 @@
       </div>
       <div class="dining-carousel" id="diningCarousel">
         <div class="carousel-track" id="diningTrack">
-          <div class="carousel-slide"><img src="Images/Dine1.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="Images/Dine2.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="Images/CooksD.JPG" alt="Shekhinah kitchen team preparing meals" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="Images/Serving.JPG" alt="Meal serving at Shekhinah Convention Centre" loading="lazy" /></div>
+          <div class="carousel-slide"><picture><source srcset="Images/Dine1.webp" type="image/webp"><img src="Images/Dine1.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></picture></div>
+          <div class="carousel-slide"><picture><source srcset="Images/Dine2.webp" type="image/webp"><img src="Images/Dine2.JPG" alt="Dining hall at Shekhinah Convention Centre" loading="lazy" /></picture></div>
+          <div class="carousel-slide"><picture><source srcset="Images/CooksD.webp" type="image/webp"><img src="Images/CooksD.JPG" alt="Shekhinah kitchen team preparing meals" loading="lazy" /></picture></div>
+          <div class="carousel-slide"><picture><source srcset="Images/Serving.webp" type="image/webp"><img src="Images/Serving.JPG" alt="Meal serving at Shekhinah Convention Centre" loading="lazy" /></picture></div>
         </div>
         <button class="carousel-btn carousel-prev" id="diningPrev" aria-label="Previous">&#8249;</button>
         <button class="carousel-btn carousel-next" id="diningNext" aria-label="Next">&#8250;</button>
