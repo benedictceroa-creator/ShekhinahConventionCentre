@@ -400,6 +400,7 @@ p  { color: var(--text-mid); }
   gap: 2rem;
 }
 .venue-card {
+  display: block;
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -953,6 +954,7 @@ footer {
   .pricing-grid   { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .gallery-masonry { columns: 2; }
   .two-col-img    { height: 300px; }
+  .event-types-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
