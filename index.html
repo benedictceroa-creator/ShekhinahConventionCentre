@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#1d4a43" />
 
   <!-- Preload hero poster so it shows instantly (LCP element) -->
-  <link rel="preload" as="image" href="Images/Picture 2.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="Images/Picture 2.webp" fetchpriority="high" />
 
   <link rel="canonical" href="https://www.shekhinahconventioncentre.com/" />
 
@@ -223,6 +223,16 @@
 <body>
 
   <!-- ═══════════════════════════════════════
+       DECEMBER ANNOUNCEMENT BAR
+  ════════════════════════════════════════ -->
+  <div class="announce-bar" role="alert" aria-live="polite">
+    <span>🎄 Christmas &amp; New Year retreat slots for Nov–Dec are filling fast —
+      <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+check+availability+for+a+November+or+December+retreat." target="_blank" rel="noopener">WhatsApp to check availability</a>
+    </span>
+    <button class="announce-bar-dismiss" aria-label="Dismiss">✕</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
        NAVIGATION
   ════════════════════════════════════════ -->
   <nav class="navbar">
@@ -256,7 +266,9 @@
   ════════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <video class="hero-video" autoplay muted loop playsinline poster="Images/Picture 2.jpg" id="hero-video">
+    <!-- Mobile: lightweight webp (67KB). Desktop: JS loads the video after page load. -->
+    <img class="hero-poster" src="Images/Picture 2.webp" alt="" aria-hidden="true" fetchpriority="high" />
+    <video class="hero-video" muted loop playsinline poster="Images/Picture 2.webp" id="hero-video">
       <source data-src="Images/SCC Video Hero.mp4" type="video/mp4">
     </video>
 
@@ -265,7 +277,8 @@
       <p class="hero-sub">A purpose-built 5-acre campus serving churches across Telangana, Andhra Pradesh and South
         India — designed for church camps, youth conferences, pastor retreats and multi-day events, just 1 hour from
         Hyderabad.</p>
-      <div class="hero-btns" style="margin-top:2rem;">
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-top:1.25rem;font-weight:500;">⚡ Nov &amp; Dec retreat dates are filling — <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+check+availability+for+a+November+or+December+retreat." target="_blank" rel="noopener" style="color:#f0c040;text-decoration:underline;text-underline-offset:2px;">WhatsApp to check availability now</a></p>
+      <div class="hero-btns" style="margin-top:1rem;">
         <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+booking+Shekhinah+Convention+Centre.+Can+you+share+availability+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp for a Quote</a>
         <a href="#enquiry" class="btn btn-outline">Request a Quote</a>
       </div>

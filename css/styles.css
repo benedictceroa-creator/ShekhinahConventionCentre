@@ -146,6 +146,41 @@ p  { color: var(--text-mid); }
 .section-header.text-center h2 { display: block; }
 
 /* ── NAVIGATION ── */
+/* ── December announcement bar ── */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  background: #b8860b;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.45rem 3rem;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.announce-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.announce-bar-dismiss {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+body.announce-visible .announce-bar { display: flex; }
+body:not(.announce-visible) .announce-bar { display: none; }
+body.announce-visible .navbar { top: 34px; }
+
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -249,6 +284,17 @@ p  { color: var(--text-mid); }
   object-fit: cover;
   object-position: center;
   z-index: 0;
+}
+/* Static webp image shown on mobile instead of 20MB video */
+.hero-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  display: none;
 }
 .hero-content {
   position: relative;
@@ -986,6 +1032,9 @@ footer {
   /* Hero — use svh on modern browsers so iOS address bar doesn't cut content */
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-content { padding: 6rem 0 3.5rem; }
+  /* Skip 20MB video on mobile — show lightweight webp poster instead */
+  .hero-video  { display: none; }
+  .hero-poster { display: block; }
   .hero-btns { flex-direction: column; align-items: flex-start; }
   .hero-stats { gap: 1.25rem; }
 

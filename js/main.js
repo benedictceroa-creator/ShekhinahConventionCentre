@@ -2,6 +2,20 @@
    SHEKHINAH CONVENTION CENTRE — Main JS
    ============================================= */
 
+/* ── December announcement bar ── */
+(function () {
+  if (!sessionStorage.getItem('announce-dismissed')) {
+    document.body.classList.add('announce-visible');
+  }
+  const dismissBtn = document.querySelector('.announce-bar-dismiss');
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      document.body.classList.remove('announce-visible');
+      sessionStorage.setItem('announce-dismissed', '1');
+    });
+  }
+})();
+
 /* ── Sticky nav ── */
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
@@ -93,6 +107,7 @@ if (enquiryForm) {
       .then(() => {
         trackEvent('enquiry_form_submit', { event_category: 'lead' });
         trackEvent('generate_lead', { event_category: 'lead', value: 1 });
+        trackAdsConversion('lead');
         btn.textContent = 'Request Sent ✓';
         if (msg) {
           msg.style.display = 'block';
@@ -117,17 +132,39 @@ if (enquiryForm) {
   });
 }
 
-/* ── GA4 Lead Event Tracking ── */
+/* ── GA4 + Google Ads Lead Event Tracking ── */
 const trackEvent = (name, params = {}) => {
   if (typeof gtag === 'function') gtag('event', name, params);
 };
 
+// Fire a Google Ads conversion alongside GA4 events.
+// Replace the label strings below with the values from:
+// Google Ads → Goals → Conversions → + New conversion action → Website → Phone/WhatsApp/Lead
+const AW_ID = 'AW-18405705430';
+const AW_LABELS = {
+  whatsapp: 'REPLACE_WITH_WHATSAPP_LABEL',   // create "WhatsApp click" conversion in Google Ads
+  phone:    'REPLACE_WITH_PHONE_LABEL',       // create "Phone call click" conversion in Google Ads
+  lead:     'REPLACE_WITH_LEAD_FORM_LABEL',   // create "Lead form submit" conversion in Google Ads
+};
+const trackAdsConversion = (labelKey) => {
+  const label = AW_LABELS[labelKey];
+  if (typeof gtag === 'function' && label && !label.startsWith('REPLACE')) {
+    gtag('event', 'conversion', { send_to: `${AW_ID}/${label}` });
+  }
+};
+
 document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
-  el.addEventListener('click', () => trackEvent('whatsapp_click', { event_category: 'lead' }));
+  el.addEventListener('click', () => {
+    trackEvent('whatsapp_click', { event_category: 'lead' });
+    trackAdsConversion('whatsapp');
+  });
 });
 
 document.querySelectorAll('a[href^="tel:"]').forEach(el => {
-  el.addEventListener('click', () => trackEvent('phone_click', { event_category: 'lead' }));
+  el.addEventListener('click', () => {
+    trackEvent('phone_click', { event_category: 'lead' });
+    trackAdsConversion('phone');
+  });
 });
 
 document.querySelectorAll('.nav-cta, .nav-cta-mobile a').forEach(el => {
@@ -179,6 +216,19 @@ if (counters.length) {
     });
   }, { threshold: 0.5 });
   counters.forEach(c => observer.observe(c));
+}
+
+/* ── Hero video — desktop only (skip 20MB download on mobile) ── */
+if (window.innerWidth >= 769) {
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo) {
+    const source = heroVideo.querySelector('source[data-src]');
+    if (source) {
+      source.src = source.dataset.src;
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+    }
+  }
 }
 
 /* ── Scroll reveal ── */

@@ -12,6 +12,8 @@
   <meta property="og:description" content="615-seat auditorium, accommodation for 350+ guests and in-house dining on a 5-acre campus — 1 hour from Hyderabad." />
   <meta property="og:image" content="https://www.shekhinahconventioncentre.com/Images/Main-Auditorium.jpg" />
   <meta property="og:url" content="https://www.shekhinahconventioncentre.com/retreats.html" />
+  <!-- Preload hero poster (LCP element) -->
+  <link rel="preload" as="image" href="Images/Picture 2.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -177,8 +179,10 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <video class="hero-video" autoplay muted loop playsinline poster="Images/Picture 2.jpg">
-      <source src="Images/SCC Video Hero.mp4" type="video/mp4">
+    <!-- Mobile: lightweight webp (67KB). Desktop: JS loads the video after page load. -->
+    <img class="hero-poster" src="Images/Picture 2.webp" alt="" aria-hidden="true" fetchpriority="high" />
+    <video class="hero-video" muted loop playsinline poster="Images/Picture 2.webp" id="hero-video">
+      <source data-src="Images/SCC Video Hero.mp4" type="video/mp4">
     </video>
     <div class="container hero-content">
       <div class="hero-tag">✝️ Church Retreat Venue · Near Hyderabad</div>
