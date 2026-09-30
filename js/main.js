@@ -144,7 +144,7 @@ const AW_ID = 'AW-18405705430';
 const AW_LABELS = {
   whatsapp: 'REPLACE_WITH_WHATSAPP_LABEL',   // create "WhatsApp click" conversion in Google Ads
   phone:    'REPLACE_WITH_PHONE_LABEL',       // create "Phone call click" conversion in Google Ads
-  lead:     'REPLACE_WITH_LEAD_FORM_LABEL',   // create "Lead form submit" conversion in Google Ads
+  lead:     '90_-CJyAvoodENaNw8hE',
 };
 const trackAdsConversion = (labelKey) => {
   const label = AW_LABELS[labelKey];
