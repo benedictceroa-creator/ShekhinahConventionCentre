@@ -200,6 +200,26 @@
     .reveal-delay-3 {
       transition-delay: 0.3s;
     }
+
+    /* Christmas season section */
+    .xmas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .xmas-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .xmas-card h4 { color: var(--gold); margin: 0.75rem 0 0.5rem; }
+    .xmas-card p { color: rgba(255,255,255,0.75); font-size: 0.88rem; line-height: 1.6; }
+    .xmas-icon { font-size: 2.2rem; }
+    .xmas-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media(max-width:768px) { .xmas-grid { grid-template-columns: 1fr; } }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8042290GN"></script>
@@ -226,9 +246,7 @@
        DECEMBER ANNOUNCEMENT BAR
   ════════════════════════════════════════ -->
   <div class="announce-bar" role="alert" aria-live="polite">
-    <span>🎄 Christmas &amp; New Year retreat slots for Nov–Dec are filling fast —
-      <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+check+availability+for+a+November+or+December+retreat." target="_blank" rel="noopener">WhatsApp to check availability</a>
-    </span>
+    <span>🎄 December 2026 slots are filling — Christmas conventions, youth camps &amp; New Year vigils. <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates%3F" target="_blank" rel="noopener" data-wa-source="announce_bar">WhatsApp to check your dates →</a></span>
     <button class="announce-bar-dismiss" aria-label="Dismiss">✕</button>
   </div>
 
@@ -277,9 +295,9 @@
       <p class="hero-sub">A purpose-built 5-acre campus serving churches across Telangana, Andhra Pradesh and South
         India — designed for church camps, youth conferences, pastor retreats and multi-day events, just 1 hour from
         Hyderabad.</p>
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-top:1.25rem;font-weight:500;">⚡ Nov &amp; Dec retreat dates are filling — <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+check+availability+for+a+November+or+December+retreat." target="_blank" rel="noopener" style="color:#f0c040;text-decoration:underline;text-underline-offset:2px;">WhatsApp to check availability now</a></p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-top:1.25rem;font-weight:500;">⚡ Christmas &amp; year-end slots filling now — <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates%3F" target="_blank" rel="noopener" style="color:#f0c040;text-decoration:underline;text-underline-offset:2px;" data-wa-source="hero_sub">WhatsApp Linu to reserve your dates</a></p>
       <div class="hero-btns" style="margin-top:1rem;">
-        <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+booking+Shekhinah+Convention+Centre.+Can+you+share+availability+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp for a Quote</a>
+        <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+booking+Shekhinah+Convention+Centre.+Can+you+share+availability+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="hero_cta">💬 WhatsApp for a Quote</a>
         <a href="#enquiry" class="btn btn-outline">Request a Quote</a>
       </div>
     </div>
@@ -310,6 +328,40 @@
       </div>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════
+       CHRISTMAS & YEAR-END SEASON
+  ════════════════════════════════════════ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">December 2026</span>
+        <h2>Christmas &amp; Year-End Retreat Bookings</h2>
+        <p style="max-width:600px;margin:0.75rem auto 0;">December is one of our busiest seasons — churches across Telangana and Andhra Pradesh book Christmas conventions, youth camps and New Year's Eve vigils weeks in advance. Limited dates remain.</p>
+      </div>
+      <div class="xmas-grid reveal">
+        <div class="xmas-card">
+          <div class="xmas-icon">✝️</div>
+          <h4>Christmas Convention</h4>
+          <p>Dec 20–27 · Multi-day Christmas programmes with the full 615-seat auditorium, overnight accommodation and in-house catering for your whole congregation.</p>
+        </div>
+        <div class="xmas-card">
+          <div class="xmas-icon">🙌</div>
+          <h4>Youth Christmas Camp</h4>
+          <p>School holiday window · Sports fields, dormitories and wide-open campus — the perfect setting for youth groups to celebrate Christmas together.</p>
+        </div>
+        <div class="xmas-card">
+          <div class="xmas-icon">🕛</div>
+          <h4>New Year's Eve Vigil</h4>
+          <p>Dec 31 – Jan 1 · Watch-night services and New Year celebrations with the entire 5-acre campus at your disposal.</p>
+        </div>
+      </div>
+      <div class="xmas-cta-row">
+        <a href="christmas-retreats.html" class="btn btn-primary">View Christmas Packages →</a>
+        <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="christmas_section">💬 WhatsApp to Check Dates</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════
        WHO IS IT FOR
@@ -783,7 +835,7 @@
 
             <div class="form-submit">
               <button type="submit" class="btn btn-primary">Request a Quote</button>
-              <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp
+              <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="form_alt">💬 WhatsApp
                 Instead</a>
             </div>
             <p class="form-note">We'll respond within 24 hours with a customised quote for your event.</p>
@@ -901,7 +953,7 @@
       <div class="cta-banner-btns">
         <a href="contact.html#enquiry" class="btn btn-primary">Request a Quote</a>
         <a href="contact.html#enquiry" class="btn btn-outline">Book a Campus Tour</a>
-        <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Us
+        <a href="https://wa.me/917093857222" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="cta_banner">💬 WhatsApp Us
           Now</a>
       </div>
     </div>
@@ -921,7 +973,7 @@
             churches, youth ministries, Bible colleges and mission organisations.</p>
           <div class="footer-social">
             <a href="https://wa.me/917093857222" class="social-btn" target="_blank" rel="noopener"
-              aria-label="WhatsApp">💬</a>
+              aria-label="WhatsApp" data-wa-source="footer_social">💬</a>
           </div>
         </div>
 
@@ -982,12 +1034,12 @@
   <!-- Sticky CTA bar — appears after scrolling past hero -->
   <div class="sticky-cta" id="sticky-cta">
     <a href="contact.html#enquiry" class="btn btn-primary sticky-cta-btn">Request a Quote</a>
-    <a href="https://wa.me/917093857222" class="btn btn-whatsapp sticky-cta-btn" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+    <a href="https://wa.me/917093857222" class="btn btn-whatsapp sticky-cta-btn" target="_blank" rel="noopener" data-wa-source="sticky_cta">💬 WhatsApp Us</a>
   </div>
 
   <!-- WhatsApp Float -->
   <a href="https://wa.me/917093857222" class="whatsapp-float" target="_blank" rel="noopener"
-    aria-label="Chat on WhatsApp">
+    aria-label="Chat on WhatsApp" data-wa-source="float">
     <span class="whatsapp-tooltip">Chat with us</span>
     💬
   </a>

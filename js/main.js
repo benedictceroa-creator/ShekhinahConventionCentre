@@ -155,7 +155,8 @@ const trackAdsConversion = (labelKey) => {
 
 document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
   el.addEventListener('click', () => {
-    trackEvent('whatsapp_click', { event_category: 'lead' });
+    const source = el.dataset.waSource || 'unknown';
+    trackEvent('whatsapp_click', { event_category: 'lead', event_label: source });
     trackAdsConversion('whatsapp');
   });
 });
@@ -230,6 +231,23 @@ if (window.innerWidth >= 769) {
     }
   }
 }
+
+/* ── Scroll depth milestones ── */
+(function () {
+  const milestones = [25, 50, 75, 90];
+  const fired = new Set();
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    if (total <= 0) return;
+    const pct = Math.round(window.scrollY / total * 100);
+    milestones.forEach(m => {
+      if (pct >= m && !fired.has(m)) {
+        fired.add(m);
+        trackEvent('scroll_depth', { event_category: 'engagement', event_label: m + '%' });
+      }
+    });
+  }, { passive: true });
+})();
 
 /* ── Scroll reveal ── */
 const reveals = document.querySelectorAll('.reveal');
