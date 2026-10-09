@@ -142,8 +142,8 @@ const trackEvent = (name, params = {}) => {
 // Google Ads → Goals → Conversions → + New conversion action → Website → Phone/WhatsApp/Lead
 const AW_ID = 'AW-18405705430';
 const AW_LABELS = {
-  whatsapp: 'REPLACE_WITH_WHATSAPP_LABEL',   // create "WhatsApp click" conversion in Google Ads
-  phone:    'REPLACE_WITH_PHONE_LABEL',       // create "Phone call click" conversion in Google Ads
+  whatsapp: '-Zp3CNbR25YdENaNw8hE',
+  phone:    'nWt6CIq42pYdENaNw8hE',
   lead:     '90_-CJyAvoodENaNw8hE',
 };
 const trackAdsConversion = (labelKey) => {
