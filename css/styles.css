@@ -1029,13 +1029,17 @@ footer {
   .nav-cta-mobile { display: block; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
   .nav-cta-mobile a { display: block; text-align: center; background: var(--gold); color: var(--teal-dark); font-weight: 700; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 50px; }
 
+  /* Announce bar wraps to 2 lines on mobile — push navbar below it */
+  body.announce-visible .navbar { top: 52px; }
+
   /* Hero — use svh on modern browsers so iOS address bar doesn't cut content */
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-content { padding: 6rem 0 3.5rem; }
   /* Skip 20MB video on mobile — show lightweight webp poster instead */
   .hero-video  { display: none; }
   .hero-poster { display: block; }
-  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns .btn { width: 100%; max-width: 340px; justify-content: center; }
   .hero-stats { gap: 1.25rem; }
 
   /* Grids */
@@ -1057,8 +1061,7 @@ footer {
   .page-hero p { font-size: 1rem; max-width: 100%; }
 
   /* Page-hero & section button groups — stack and centre on mobile */
-  .page-hero .container > div[style*="flex"],
-  .hero-btns { flex-direction: column; align-items: center; }
+  .page-hero .container > div[style*="flex"] { flex-direction: column; align-items: center; }
   .page-hero .btn { width: 100%; justify-content: center; }
 
   /* Hero buttons already handled; ensure page CTAs also stack */
@@ -1151,6 +1154,11 @@ a.audience-card { display: block; color: inherit; }
   font-weight: 700;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
+}
+
+/* Responsive override — must appear after base .event-types-grid above */
+@media (max-width: 1024px) {
+  .event-types-grid { grid-template-columns: 1fr; }
 }
 
 /* ── EXTRA SMALL PHONES (≤480px) ── */
