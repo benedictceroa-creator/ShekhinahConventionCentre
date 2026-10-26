@@ -214,6 +214,17 @@
     .lp-feature-card h4 { color: var(--teal-dark); margin-bottom: 0.4rem; }
     .lp-feature-card p { font-size: 0.88rem; line-height: 1.6; }
 
+    /* ── Campus photos ── */
+    .lp-photos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .lp-photo { margin: 0; min-width: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--white); border: 1px solid var(--border); }
+    .lp-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .lp-photo figcaption { padding: 0.6rem 0.85rem; font-size: 0.85rem; font-weight: 600; color: var(--teal-dark); }
+
     /* ── FAQ ── */
     .faq-list { max-width: 760px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
@@ -242,6 +253,7 @@
     @media (max-width: 1024px) {
       .xmas-events-grid { grid-template-columns: 1fr 1fr; }
       .lp-features-grid { grid-template-columns: repeat(2, 1fr); }
+      .lp-photos { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .xmas-events-grid, .why-dec-grid, .lp-features-grid { grid-template-columns: 1fr; }
@@ -410,6 +422,36 @@
         <h2>Everything Your Christmas Event Needs</h2>
         <p style="max-width:540px;margin:0.75rem auto 0;">One quote covers everything — no hidden extras, no last-minute surprises on the day.</p>
       </div>
+      <div class="lp-photos reveal">
+        <figure class="lp-photo">
+          <picture>
+            <source srcset="Images/Main-Auditorium.webp" type="image/webp">
+            <img src="Images/Main-Auditorium.jpg" alt="Shekhinah 615-seat A/C main auditorium" loading="lazy" width="1280" height="960" />
+          </picture>
+          <figcaption>615-seat A/C auditorium</figcaption>
+        </figure>
+        <figure class="lp-photo">
+          <picture>
+            <source srcset="Images/Dorm-bright.webp" type="image/webp">
+            <img src="Images/Dorm-bright.jpg" alt="Shekhinah dormitory accommodation" loading="lazy" width="1600" height="1200" />
+          </picture>
+          <figcaption>On-campus stay for 350+</figcaption>
+        </figure>
+        <figure class="lp-photo">
+          <picture>
+            <source srcset="Images/Dine3.webp" type="image/webp">
+            <img src="Images/Dine3.JPG" alt="Shekhinah dining hall" loading="lazy" width="1600" height="1067" />
+          </picture>
+          <figcaption>In-house dining hall</figcaption>
+        </figure>
+        <figure class="lp-photo">
+          <picture>
+            <source srcset="Images/Amphi.webp" type="image/webp">
+            <img src="Images/Amphi.JPG" alt="Shekhinah open-air amphitheatre" loading="lazy" width="1600" height="1067" />
+          </picture>
+          <figcaption>Open-air amphitheatre</figcaption>
+        </figure>
+      </div>
       <div class="lp-features-grid">
         <div class="lp-feature-card reveal">
           <div class="lp-feature-icon">🏛️</div>
@@ -472,8 +514,8 @@
           </div>
 
           <div style="margin-top:2.5rem;background:rgba(255,255,255,0.07);border:1px solid rgba(201,169,110,0.2);border-radius:var(--radius-lg);padding:1.5rem;">
-            <p style="font-style:italic;color:rgba(255,255,255,0.85);font-size:0.92rem;margin-bottom:0.75rem;">"The food was excellent and served limitless. The staff came an extra mile to help us in every way. Had a wonderful two days on campus."</p>
-            <div style="font-size:0.82rem;color:var(--gold);font-weight:700;">— Youth Outreach Ministry Coordinator</div>
+            <p style="font-style:italic;color:rgba(255,255,255,0.85);font-size:0.92rem;margin-bottom:0.75rem;">"The manager of the centre, Bro. Linu Matthews, made excellent arrangements and everything was ready. Food was served on time and the premises are neat and well kept. I recommend this centre for conducting seminars and retreats to all churches and Christian organisations."</p>
+            <div style="font-size:0.82rem;color:var(--gold);font-weight:700;">— Berachah Church, Annual Retreat, October 2026</div>
           </div>
         </div>
 
