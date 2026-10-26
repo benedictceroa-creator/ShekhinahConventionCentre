@@ -219,15 +219,20 @@ if (counters.length) {
   counters.forEach(c => observer.observe(c));
 }
 
-/* ── Hero video — desktop only (skip 20MB download on mobile) ── */
+/* ── Hero video — desktop only (skip 20MB download on mobile),
+      deferred until page load so it doesn't compete with images ── */
 if (window.innerWidth >= 769) {
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     const source = heroVideo.querySelector('source[data-src]');
     if (source) {
-      source.src = source.dataset.src;
-      heroVideo.load();
-      heroVideo.play().catch(() => {});
+      const startVideo = () => {
+        source.src = source.dataset.src;
+        heroVideo.load();
+        heroVideo.play().catch(() => {});
+      };
+      if (document.readyState === 'complete') startVideo();
+      else window.addEventListener('load', startVideo, { once: true });
     }
   }
 }
