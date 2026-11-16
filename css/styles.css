@@ -146,41 +146,6 @@ p  { color: var(--text-mid); }
 .section-header.text-center h2 { display: block; }
 
 /* ── NAVIGATION ── */
-/* ── December announcement bar ── */
-.announce-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1001;
-  background: #b8860b;
-  color: #fff;
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 0.45rem 3rem;
-  line-height: 1.35;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-.announce-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-.announce-bar-dismiss {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.8);
-  font-size: 1.1rem;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0.25rem;
-}
-body.announce-visible .announce-bar { display: flex; }
-body:not(.announce-visible) .announce-bar { display: none; }
-body.announce-visible .navbar { top: 34px; }
-
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -1029,9 +994,6 @@ footer {
   .nav-cta-mobile { display: block; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
   .nav-cta-mobile a { display: block; text-align: center; background: var(--gold); color: var(--teal-dark); font-weight: 700; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 50px; }
 
-  /* Announce bar wraps to 2 lines on mobile — push navbar below it */
-  body.announce-visible .navbar { top: 52px; }
-
   /* Hero — use svh on modern browsers so iOS address bar doesn't cut content */
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-content { padding: 6rem 0 3.5rem; }
@@ -1200,4 +1162,42 @@ a.audience-card { display: block; color: inherit; }
 
   /* Section label smaller */
   .section-label { font-size: 0.72rem; }
+}
+
+/* ── AERIAL TOUR (homepage drone video) ── */
+.aerial-frame {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--teal-dark);
+  aspect-ratio: 16 / 9;
+}
+.aerial-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aerial-toggle {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20,46,41,0.75);
+  color: var(--white);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.aerial-toggle:hover,
+.aerial-toggle:focus-visible { background: var(--gold); color: var(--teal-dark); }
+@media (max-width: 480px) {
+  .aerial-frame { border-radius: var(--radius); }
+  .aerial-toggle { right: 0.6rem; bottom: 0.6rem; width: 38px; height: 38px; }
 }

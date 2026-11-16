@@ -2,20 +2,6 @@
    SHEKHINAH CONVENTION CENTRE — Main JS
    ============================================= */
 
-/* ── December announcement bar ── */
-(function () {
-  if (!sessionStorage.getItem('announce-dismissed')) {
-    document.body.classList.add('announce-visible');
-  }
-  const dismissBtn = document.querySelector('.announce-bar-dismiss');
-  if (dismissBtn) {
-    dismissBtn.addEventListener('click', () => {
-      document.body.classList.remove('announce-visible');
-      sessionStorage.setItem('announce-dismissed', '1');
-    });
-  }
-})();
-
 /* ── Sticky nav ── */
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
@@ -70,6 +56,38 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   }
 });
 
+/* ── Lead attribution ──
+   Remember the Google Ads click ID (gclid) and UTM source from the landing
+   page for 90 days, so an enquiry sent later from contact.html can be traced
+   back to the ad click and uploaded to Google Ads as an offline conversion. */
+const ATTR_KEY = 'scc-attribution';
+const ATTR_TTL = 90 * 24 * 60 * 60 * 1000;
+
+(function () {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const gclid  = params.get('gclid') || params.get('gbraid') || params.get('wbraid');
+    const utm    = params.get('utm_source');
+    if (!gclid && !utm && localStorage.getItem(ATTR_KEY)) return;
+    const ref = document.referrer && !document.referrer.includes(location.hostname)
+      ? new URL(document.referrer).hostname : '';
+    localStorage.setItem(ATTR_KEY, JSON.stringify({
+      gclid:   gclid || '',
+      source:  gclid ? 'google_ads' : (utm || ref || 'direct'),
+      landing: location.pathname,
+      ts:      Date.now(),
+    }));
+  } catch (e) { /* storage blocked — attribution is best-effort */ }
+})();
+
+const getAttribution = () => {
+  try {
+    const a = JSON.parse(localStorage.getItem(ATTR_KEY) || 'null');
+    if (a && Date.now() - a.ts < ATTR_TTL) return a;
+  } catch (e) { /* ignore */ }
+  return { gclid: '', source: 'unknown', landing: '' };
+};
+
 /* ── Enquiry form submission ── */
 if (typeof emailjs !== 'undefined') emailjs.init('ZMOqGe0V4vSDL1ux8');
 
@@ -89,7 +107,12 @@ if (enquiryForm) {
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
+    const attr = getAttribution();
     const templateParams = {
+      enquiry_type:  getVal('enquiry-type'),
+      gclid:         attr.gclid,
+      lead_source:   attr.source,
+      landing_page:  attr.landing,
       name:          getVal('name'),
       org:           getVal('org'),
       phone:         getVal('phone'),

@@ -201,25 +201,6 @@
       transition-delay: 0.3s;
     }
 
-    /* Christmas season section */
-    .xmas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .xmas-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(201,169,110,0.25);
-      border-radius: var(--radius-lg);
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-    .xmas-card h4 { color: var(--gold); margin: 0.75rem 0 0.5rem; }
-    .xmas-card p { color: rgba(255,255,255,0.75); font-size: 0.88rem; line-height: 1.6; }
-    .xmas-icon { font-size: 2.2rem; }
-    .xmas-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    @media(max-width:768px) { .xmas-grid { grid-template-columns: 1fr; } }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8042290GN"></script>
@@ -241,14 +222,6 @@
 </head>
 
 <body>
-
-  <!-- ═══════════════════════════════════════
-       DECEMBER ANNOUNCEMENT BAR
-  ════════════════════════════════════════ -->
-  <div class="announce-bar" role="alert" aria-live="polite">
-    <span>🎄 December 2026 slots are filling — Christmas conventions, youth camps &amp; New Year vigils. <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates%3F" target="_blank" rel="noopener" data-wa-source="announce_bar">WhatsApp to check your dates →</a></span>
-    <button class="announce-bar-dismiss" aria-label="Dismiss">✕</button>
-  </div>
 
   <!-- ═══════════════════════════════════════
        NAVIGATION
@@ -295,7 +268,6 @@
       <p class="hero-sub">A purpose-built 5-acre campus serving churches across Telangana, Andhra Pradesh and South
         India — designed for church camps, youth conferences, pastor retreats and multi-day events, just 1 hour from
         Hyderabad.</p>
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-top:1.25rem;font-weight:500;">⚡ Christmas &amp; year-end slots filling now — <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates%3F" target="_blank" rel="noopener" style="color:#f0c040;text-decoration:underline;text-underline-offset:2px;" data-wa-source="hero_sub">WhatsApp Linu to reserve your dates</a></p>
       <div class="hero-btns" style="margin-top:1rem;">
         <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+booking+Shekhinah+Convention+Centre.+Can+you+share+availability+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="hero_cta">💬 WhatsApp for a Quote</a>
         <a href="#enquiry" class="btn btn-outline">Request a Quote</a>
@@ -328,40 +300,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ═══════════════════════════════════════
-       CHRISTMAS & YEAR-END SEASON
-  ════════════════════════════════════════ -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-label">December 2026</span>
-        <h2>Christmas &amp; Year-End Retreat Bookings</h2>
-        <p style="max-width:600px;margin:0.75rem auto 0;">December is one of our busiest seasons — churches across Telangana and Andhra Pradesh book Christmas conventions, youth camps and New Year's Eve vigils weeks in advance. Limited dates remain.</p>
-      </div>
-      <div class="xmas-grid reveal">
-        <div class="xmas-card">
-          <div class="xmas-icon">✝️</div>
-          <h4>Christmas Convention</h4>
-          <p>Dec 20–27 · Multi-day Christmas programmes with the full 615-seat auditorium, overnight accommodation and in-house catering for your whole congregation.</p>
-        </div>
-        <div class="xmas-card">
-          <div class="xmas-icon">🙌</div>
-          <h4>Youth Christmas Camp</h4>
-          <p>School holiday window · Sports fields, dormitories and wide-open campus — the perfect setting for youth groups to celebrate Christmas together.</p>
-        </div>
-        <div class="xmas-card">
-          <div class="xmas-icon">🕛</div>
-          <h4>New Year's Eve Vigil</h4>
-          <p>Dec 31 – Jan 1 · Watch-night services and New Year celebrations with the entire 5-acre campus at your disposal.</p>
-        </div>
-      </div>
-      <div class="xmas-cta-row">
-        <a href="christmas-retreats.html" class="btn btn-primary">View Christmas Packages →</a>
-        <a href="https://wa.me/917093857222?text=Hi%2C+I%27d+like+to+enquire+about+a+Christmas+or+New+Year+retreat+at+Shekhinah.+Can+you+share+available+December+dates+and+pricing%3F" target="_blank" rel="noopener" class="btn btn-whatsapp" data-wa-source="christmas_section">💬 WhatsApp to Check Dates</a>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════
        WHO IS IT FOR
@@ -474,6 +412,28 @@
           <p>Flexible packages for churches of every size. Customised quotes based on your exact requirements.</p>
           <span style="color:var(--gold);font-size:0.84rem;font-weight:700;display:inline-block;margin-top:0.6rem;">View pricing →</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       AERIAL TOUR (drone video)
+  ════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Aerial Tour</span>
+        <h2>See the Campus from Above</h2>
+        <p style="max-width:560px;margin:0.75rem auto 0;">Auditorium, accommodation blocks, dining hall and open grounds — all on one secure campus, just 1 hour from Hyderabad.</p>
+      </div>
+      <!-- 3MB loop, loaded only when scrolled near (see script at bottom). Poster is 35KB. -->
+      <div class="aerial-frame reveal">
+        <video class="aerial-video" id="aerial-video" muted loop playsinline preload="none"
+          poster="Images/drone-campus-poster.webp" width="854" height="480"
+          aria-label="Drone footage flying over the Shekhinah Convention Centre campus">
+          <source data-src="Images/drone-campus.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="aerial-toggle" id="aerial-toggle" aria-label="Play video">▶</button>
       </div>
     </div>
   </section>
@@ -1097,6 +1057,33 @@
       var s = v && v.querySelector('source[data-src]');
       if (v && s) { s.src = s.dataset.src; v.load(); }
     }
+
+    // Aerial video — fetch only when scrolled near, pause when off-screen.
+    // Skipped (poster + play button only) for reduced-motion or data-saver users.
+    (function () {
+      var v = document.getElementById('aerial-video');
+      var btn = document.getElementById('aerial-toggle');
+      if (!v || !btn) return;
+      var s = v.querySelector('source[data-src]');
+      var loaded = false, userPaused = false;
+      var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+        (navigator.connection && navigator.connection.saveData);
+
+      function load() { if (!loaded) { s.src = s.dataset.src; v.load(); loaded = true; } }
+      function play() { load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      v.addEventListener('play', function () { btn.textContent = '❚❚'; btn.setAttribute('aria-label', 'Pause video'); });
+      v.addEventListener('pause', function () { btn.textContent = '▶'; btn.setAttribute('aria-label', 'Play video'); });
+      btn.addEventListener('click', function () {
+        if (v.paused) { userPaused = false; play(); } else { userPaused = true; v.pause(); }
+      });
+
+      if (calm || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { if (!userPaused) play(); } else if (loaded) { v.pause(); }
+        });
+      }, { rootMargin: '200px 0px' }).observe(v);
+    })();
   </script>
 </body>
 
