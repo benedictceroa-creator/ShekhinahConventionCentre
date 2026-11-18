@@ -1201,3 +1201,40 @@ a.audience-card { display: block; color: inherit; }
   .aerial-frame { border-radius: var(--radius); }
   .aerial-toggle { right: 0.6rem; bottom: 0.6rem; width: 38px; height: 38px; }
 }
+
+/* ── Announcement bar (2027 bookings) ── */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  background: #b8860b;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.45rem 3rem;
+  line-height: 1.35;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.announce-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.announce-bar-dismiss {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+body.announce-visible { padding-top: var(--announce-h, 34px); }
+body.announce-visible .announce-bar { display: flex; }
+body.announce-visible .navbar { top: var(--announce-h, 34px); }
+@media (max-width: 768px) {
+  .announce-bar { font-size: 0.76rem; padding: 0.45rem 2.5rem 0.45rem 1rem; }
+}

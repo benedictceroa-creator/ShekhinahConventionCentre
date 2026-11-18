@@ -290,3 +290,29 @@ if (reveals.length) {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => revealObserver.observe(el));
 }
+
+/* ── Announcement bar (2027 bookings) ── */
+(function () {
+  const bar = document.querySelector('.announce-bar');
+  if (!bar) return;
+  const KEY = 'announce-2027-dismissed';
+  let dismissed = false;
+  try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (dismissed) return;
+
+  const setHeight = () => {
+    document.body.style.setProperty('--announce-h', bar.offsetHeight + 'px');
+  };
+  document.body.classList.add('announce-visible');
+  setHeight();
+  window.addEventListener('resize', setHeight);
+
+  const dismissBtn = bar.querySelector('.announce-bar-dismiss');
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      document.body.classList.remove('announce-visible');
+      window.removeEventListener('resize', setHeight);
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    });
+  }
+})();
